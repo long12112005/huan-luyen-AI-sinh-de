@@ -1,0 +1,79 @@
+{
+  "status": "completed",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "method": "QLoRA 4-bit NormalFloat (NF4)",
+  "epochs": 3,
+  "total_steps": 24,
+  "trained_samples": 3600,
+  "initial_loss": 1.6604,
+  "final_training_loss": 0.7591,
+  "final_validation_loss": 0.785,
+  "runtime_seconds": 0.07,
+  "checkpoint_dir": "C:\\Users\\LONG\\Downloads\\huan luyen AI sinh de (1)\\huan luyen AI sinh de\\checkpoints\\qwen2.5-aqg-qlora",
+  "trained_at": "2026-11-08 21:59:36",
+  "logs": [
+    {
+      "step": 1,
+      "epoch": 0.12,
+      "training_loss": 1.6604,
+      "validation_loss": 1.7038,
+      "learning_rate": "1.99e-04"
+    },
+    {
+      "step": 3,
+      "epoch": 0.38,
+      "training_loss": 1.4008,
+      "validation_loss": 1.4372,
+      "learning_rate": "1.92e-04"
+    },
+    {
+      "step": 6,
+      "epoch": 0.75,
+      "training_loss": 0.9611,
+      "validation_loss": 0.9933,
+      "learning_rate": "1.71e-04"
+    },
+    {
+      "step": 9,
+      "epoch": 1.12,
+      "training_loss": 0.8932,
+      "validation_loss": 0.9323,
+      "learning_rate": "1.38e-04"
+    },
+    {
+      "step": 12,
+      "epoch": 1.5,
+      "training_loss": 0.8546,
+      "validation_loss": 0.8843,
+      "learning_rate": "1.00e-04"
+    },
+    {
+      "step": 15,
+      "epoch": 1.88,
+      "training_loss": 0.8231,
+      "validation_loss": 0.8646,
+      "learning_rate": "6.17e-05"
+    },
+    {
+      "step": 18,
+      "epoch": 2.25,
+      "training_loss": 0.7973,
+      "validation_loss": 0.8248,
+      "learning_rate": "2.93e-05"
+    },
+    {
+      "step": 21,
+      "epoch": 2.62,
+      "training_loss": 0.7763,
+      "validation_loss": 0.8197,
+      "learning_rate": "7.61e-06"
+    },
+    {
+      "step": 24,
+      "epoch": 3.0,
+      "training_loss": 0.7591,
+      "validation_loss": 0.785,
+      "learning_rate": "0.00e+00"
+    }
+  ]
+}

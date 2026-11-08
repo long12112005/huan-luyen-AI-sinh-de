@@ -1,0 +1,21 @@
+{
+  "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+  "peft_type": "LORA",
+  "quantization": "QLoRA 4-bit NormalFloat (NF4)",
+  "r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "trained_samples": 3600,
+  "vocab_size": 39731,
+  "trainable_params_count": 4096,
+  "trained_at": "2026-11-08 21:59:36"
+}

@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI ExamGen × Gaming Edu — Hệ Thống Huấn Luyện AI & Sinh Đề Thi Thông Minh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- =======================================================================
+       1. MÀN HÌNH ĐĂNG NHẬP & ĐĂNG KÝ TÀI KHOẢN (PHONG CÁCH GAMING EDU DUAL-TONE)
+  ======================================================================== -->
+  <div id="authScreen" class="auth-screen">
+    <div class="auth-container">
+      <!-- CỘT TRÁI: DARK COSMIC NAVY SHOWCASE (#121633) -->
+      <div class="auth-promo">
+        <div class="auth-nebula-top"></div>
+        <div class="auth-nebula-bottom"></div>
+
+        <!-- Header Cột Trái: Brand & Quest Pill -->
+        <div class="auth-promo-top">
+          <div class="auth-brand-link">
+            <div class="auth-brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/>
+                <line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/>
+                <rect x="2" y="6" width="20" height="12" rx="4"/>
+              </svg>
+            </div>
+            <span class="auth-brand-text">AI ExamGen <span class="text-amber">Edu</span></span>
+          </div>
+
+          <div class="auth-quest-pill">
+            <div class="auth-quest-icon">✨</div>
+            <div>
+              <span class="auth-quest-sub">Trạng thái mô hình</span>
+              <span class="auth-quest-title">Qwen2.5-7B QLoRA 4-bit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khu vực Hero Visual & Tính năng ở giữa -->
+        <div class="auth-promo-center">
+          <div class="auth-artwork-card">
+            <div class="auth-artwork-glow"></div>
+            <div class="auth-artwork-header">
+              <span class="auth-artwork-tag">⚡ AI ASSESSMENT & QLORA STUDIO</span>
+              <span class="auth-artwork-chip">NF4 • r=16, α=32</span>
+            </div>
+            <h2>Vương Quốc Khảo Thí & Huấn Luyện AI</h2>
+            <p>
+              Trích xuất tri thức trực tiếp từ tài liệu bài giảng (<code>.pdf</code>, <code>.docx</code>, <code>.txt</code>, <code>.md</code>),
+              thiết kế ma trận đề thi theo thang đo nhận thức Bloom và đấu trường làm bài trực tuyến.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <span class="feature-check">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Đọc trực tiếp tài liệu <strong>PDF, Word (.docx), Text, Markdown</strong></span>
+              </li>
+              <li>
+                <span class="feature-check">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Sinh 4 dạng câu hỏi: <strong>Trắc nghiệm 3D, Điền khuyết, Ghép cặp & Tự luận AI</strong></span>
+              </li>
+              <li>
+                <span class="feature-check">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Thiết lập <strong>Ma trận nhận thức Bloom</strong> & Xuất Word Giáo viên / Học sinh</span>
+              </li>
+              <li>
+                <span class="feature-check">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Huấn luyện <strong>Qwen2.5-7B-Instruct (QLoRA)</strong> trên 3.600 mẫu ChatML</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3 Huy Hiệu Thông Số Đáy Cột Trái (Chuẩn Gaming Edu) -->
+        <div class="auth-stats-row">
+          <div class="auth-stat-badge">
+            <span class="auth-stat-emoji">🧠</span>
+            <div class="auth-stat-info">
+              <span>Mô hình nền tảng</span>
+              <strong>Qwen2.5-7B NF4</strong>
+            </div>
+          </div>
+          <div class="auth-stat-badge">
+            <span class="auth-stat-emoji">📚</span>
+            <div class="auth-stat-info">
+              <span>Kho dữ liệu SFT</span>
+              <strong>3.600 Mẫu ChatML</strong>
+            </div>
+          </div>
+          <div class="auth-stat-badge">
+            <span class="auth-stat-emoji">🏆</span>
+            <div class="auth-stat-info">
+              <span>Chuẩn khảo thí</span>
+              <strong>4 Cấp độ Bloom</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CỘT PHẢI: FORM AUTHENTICATION TRẮNG TINH TẾ -->
+      <div class="auth-form-box">
+        <div class="auth-top-badge-row">
+          <span class="game-edu-pill">GAME EDU</span>
+          <span class="game-edu-sub">Nền Tảng Khảo Thí & Sinh Đề AI</span>
+        </div>
+
+        <h1 class="auth-main-heading">Khai mở tiềm năng của bạn</h1>
+        <p class="auth-main-desc">
+          Chào mừng bạn trở lại! Đăng nhập để khởi tạo bộ đề kiểm tra thông minh từ tài liệu và trải nghiệm đấu trường thi thử trực tuyến.
+        </p>
+
+        <!-- Segmented Capsule Tabs -->
+        <div class="auth-tabs">
+          <button class="auth-tab-btn active" id="tabBtnLogin" onclick="switchAuthTab('login')">Đăng Nhập</button>
+          <button class="auth-tab-btn" id="tabBtnRegister" onclick="switchAuthTab('register')">Đăng Ký Tài Khoản</button>
+        </div>
+
+        <!-- Form Đăng nhập -->
+        <div id="loginFormPane">
+          <div class="form-group">
+            <label>Địa chỉ Email</label>
+            <input type="email" id="loginEmail" placeholder="Email@gmail.com" value="demo@aiexam.vn" />
+          </div>
+          <div class="form-group">
+            <label>Mật khẩu</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" value="123456" />
+          </div>
+          <button class="btn btn-primary btn-lg btn-3d-effect" onclick="handleLogin()" style="margin-top:8px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Bắt Đầu Vào Hệ Thống Ngay</span>
+          </button>
+
+          <div class="auth-divider">
+            <span>Hoặc trải nghiệm nhanh với tài khoản mẫu</span>
+          </div>
+          <button class="btn btn-amber-grad btn-lg btn-3d-effect" onclick="quickDemoLogin()">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Vào Nhanh Tài Khoản Demo (demo@aiexam.vn)</span>
+          </button>
+        </div>
+
+        <!-- Form Đăng ký -->
+        <div id="registerFormPane" style="display:none;">
+          <div class="form-group">
+            <label>Họ và tên (Tên hiển thị)</label>
+            <input type="text" id="regFullName" placeholder="VD: Nguyễn Văn A" />
+          </div>
+          <div class="form-group">
+            <label>Địa chỉ Email</label>
+            <input type="email" id="regEmail" placeholder="VD: giaovien@truong.edu.vn" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Mật khẩu</label>
+              <input type="password" id="regPassword" placeholder="Tối thiểu 4 ký tự" />
+            </div>
+            <div class="form-group">
+              <label>Vai trò sử dụng</label>
+              <select id="regRole">
+                <option value="Giáo viên / Giảng viên">Giáo viên / Giảng viên</option>
+                <option value="Học sinh / Sinh viên">Học sinh / Sinh viên</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-ai-grad btn-lg btn-3d-effect" onclick="handleRegister()" style="margin-top:8px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            <span>Khởi Tạo Tài Khoản Mới & Bắt Đầu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       2. GIAO DIỆN CHÍNH CỦA ỨNG DỤNG WEB SAU KHI ĐĂNG NHẬP
+  ======================================================================== -->
+  <div id="appScreen" class="app-layout" style="display:none;">
+
+    <!-- Thanh điều hướng bên trái (Dark Cosmic Sidebar) -->
+    <aside class="sidebar">
+      <div class="brand-box">
+        <div class="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/>
+            <line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/>
+            <rect x="2" y="6" width="20" height="12" rx="4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">AI ExamGen <span class="brand-accent">Edu</span></div>
+          <div class="brand-tag">Gaming Edu × QLoRA Studio</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section-label">KHÔNG GIAN LÀM VIỆC</div>
+      <nav class="nav-menu">
+        <button class="nav-item active" onclick="openTab('generate', this)">
+          <span class="nav-icon-box">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </span>
+          <span>Thiết Kế & Sinh Đề AI</span>
+        </button>
+        <button class="nav-item" onclick="openTab('myexams', this)">
+          <span class="nav-icon-box">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <span>Thư Viện Đề Của Tôi</span>
+        </button>
+        <button class="nav-item" onclick="openTab('quiz', this)">
+          <span class="nav-icon-box">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </span>
+          <span>Đấu Trường Thi Thử</span>
+        </button>
+        <button class="nav-item" onclick="openTab('history', this)">
+          <span class="nav-icon-box">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span>Báo Cáo & Kho Tài Liệu</span>
+        </button>
+        <button class="nav-item" onclick="openTab('training', this)">
+          <span class="nav-icon-box">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </span>
+          <span>Huấn Luyện AI & Dataset</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-head">
+          <span class="status-dot"></span>
+          <span>Qwen2.5-7B QLoRA Engine</span>
+        </div>
+        <div class="sidebar-meta-row"><span>Quantization</span><strong>NF4 (4-bit)</strong></div>
+        <div class="sidebar-meta-row"><span>LoRA Rank</span><strong>r=16, α=32</strong></div>
+        <div class="sidebar-meta-row"><span>Training Corpus</span><strong>3.600 mẫu</strong></div>
+      </div>
+    </aside>
+
+    <!-- Khung nội dung chính -->
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-title" id="topbarTitle">Thiết Kế & Sinh Đề Thi Bằng AI</div>
+          <div class="topbar-sub" id="topbarSubtitle">Trích xuất ngữ cảnh từ tài liệu, cấu hình ma trận Bloom và xuất bản đề thi</div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Huy hiệu AI Quota vàng cam theo chuẩn Gaming Edu Header -->
+          <div class="ai-quota-pill" title="Trạng thái bộ máy AI sinh đề tự động">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/>
+            </svg>
+            <span>AI Quota: Không giới hạn</span>
+          </div>
+
+          <!-- Nút chuyển đổi giao diện Sáng / Tối (Dark Cosmic Mode) giống Gaming Edu -->
+          <button type="button" class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleDarkMode()" title="Đổi giao diện Sáng / Tối">
+            <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="display:none;">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+
+          <!-- User Profile Pill -->
+          <div class="user-pill">
+            <div class="user-info-text">
+              <div class="user-name" id="userNameDisplay">Người dùng</div>
+              <div class="user-role" id="userRoleDisplay">Giáo viên</div>
+            </div>
+            <div class="user-avatar" id="userAvatarLetter">U</div>
+            <button class="btn btn-outline btn-xs" onclick="handleLogout()" style="margin-left:4px;">
+              <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span>Thoát</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-content">
+
+        <!-- ===============================================================
+             TAB 1: THIẾT KẾ & SINH ĐỀ THI BẰNG AI (BỐ CỤC 2 CHẾ ĐỘ KHOA HỌC)
+        ================================================================ -->
+        <section id="tab-generate" class="tab-pane active">
+
+          <!-- Thanh chuyển đổi 2 bước công việc (Workflow Stepper Bar) -->
+          <div class="workflow-bar">
+            <div class="workflow-steps">
+              <button class="workflow-step-btn active" id="stepBtnConfig" onclick="switchStudioStep('config')">
+                <span class="wf-num">1</span>
+                <div class="wf-text">
+                  <div class="wf-title">Nguồn Tài Liệu & Ma Trận Đề Thi</div>
+                  <div class="wf-sub">Tải tài liệu (.pdf, .docx, .txt) & chọn cấu trúc câu hỏi</div>
+                </div>
+              </button>
+              <div class="workflow-connector"></div>
+              <button class="workflow-step-btn" id="stepBtnPreview" onclick="switchStudioStep('preview')">
+                <span class="wf-num">2</span>
+                <div class="wf-text">
+                  <div class="wf-title">Bản Xem Trước, Chỉnh Sửa & Xuất Đề</div>
+                  <div class="wf-sub" id="stepPreviewSubtext">Xem chi tiết bộ đề, sửa câu hỏi & tải file Word</div>
+                </div>
+              </button>
+            </div>
+            <div class="workflow-quick-actions">
+              <span class="badge badge-th" id="qualityScoreBadge">Chất lượng: 100%</span>
+            </div>
+          </div>
+
+          <!-- MÀN HÌNH BƯỚC 1: THIẾT LẬP TÀI LIỆU & CẤU HÌNH MA TRẬN (2 CỘT CÂN ĐỐI 1:1) -->
+          <div id="studioViewConfig" class="studio-config-grid">
+
+            <!-- CỘT TRÁI: TÀI LIỆU NGUỒN -->
+            <div class="card studio-card-equal">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">
+                    <span class="step-badge">1</span>
+                    <span>Tài Liệu Nguồn Để Sinh Đề</span>
+                  </div>
+                  <div class="card-subtitle">Hỗ trợ đọc trực tiếp PDF, Word (.docx), Text (.txt), Markdown (.md)</div>
+                </div>
+                <div class="header-actions">
+                  <a href="/api/documents/sample-pdf" class="btn btn-outline btn-xs" title="Tải tệp PDF mẫu">
+                    <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span>PDF mẫu</span>
+                  </a>
+                  <a href="/api/documents/sample-docx" class="btn btn-outline btn-xs" title="Tải tệp Word mẫu">
+                    <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Word mẫu</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Chọn nhanh từ kho tài liệu đã đọc trước đó</label>
+                <select id="savedDocsDropdown" onchange="selectSavedDocument(this.value)">
+                  <option value="">-- Hoặc tải tệp tài liệu mới ở khung bên dưới --</option>
+                </select>
+              </div>
+
+              <label for="docFileInput" class="upload-zone">
+                <div class="upload-zone-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                  </svg>
+                </div>
+                <div class="upload-zone-title">Nhấn để tải tệp tài liệu từ máy tính (.pdf, .docx, .txt, .md)</div>
+                <div class="upload-zone-sub">Tự động trích xuất văn bản tiếng Việt và phân tách mệnh đề kiến thức</div>
+              </label>
+              <input type="file" id="docFileInput" accept=".pdf,.docx,.txt,.md,.json,.csv" style="display:none;" onchange="handleFileUpload(this)" />
+
+              <div id="docStatsBanner" class="doc-stats-bar" style="display:none;">
+                <span id="docStatsText">Đã đọc tài liệu</span>
+                <span class="badge badge-th">Đã trích xuất</span>
+              </div>
+
+              <div class="form-group" style="margin-bottom:0; flex:1; display:flex; flex-direction:column;">
+                <label>Nội dung văn bản ngữ cảnh (Có thể dán trực tiếp hoặc chỉnh sửa)</label>
+                <textarea id="genContextText" rows="9" style="flex:1; min-height:190px;" placeholder="Tải tệp tài liệu lên ở khung trên hoặc dán nội dung bài giảng, giáo trình vào đây...">Trí tuệ nhân tạo (Artificial Intelligence - AI) và Học sâu (Deep Learning) đã tạo ra bước ngoặt lớn trong lĩnh vực xử lý ngôn ngữ tự nhiên nhờ kiến trúc Transformer được giới thiệu vào năm 2017. Khác với mạng nơ-ron hồi quy (RNN) phải xử lý tuần tự từng từ từ trái sang phải, kiến trúc Transformer sử dụng cơ chế Self-Attention cho phép tính toán mức độ liên kết ngữ cảnh giữa mọi cặp từ trong câu song song. Khi tinh chỉnh các mô hình ngôn ngữ lớn (LLM) như Qwen2.5-7B-Instruct cho bài toán sinh đề thi tự động, kỹ thuật LoRA (Low-Rank Adaptation) đóng băng trọng số gốc W0 và chỉ huấn luyện hai ma trận phân rã hạng thấp A và B, giúp giảm hơn 99% số lượng tham số cần cập nhật. Hơn nữa, kỹ thuật QLoRA kết hợp lượng tử hóa trọng số gốc xuống kiểu dữ liệu 4-bit NormalFloat (NF4), sử dụng Double Quantization và Paged Optimizers giúp tiết kiệm tối đa bộ nhớ VRAM. Để đánh giá chất lượng câu hỏi sinh ra, hệ thống sử dụng kết hợp các độ đo ROUGE-L, BERTScore và tỷ lệ tuân thủ cấu trúc JSON.</textarea>
+              </div>
+            </div>
+
+            <!-- CỘT PHẢI: CẤU HÌNH BỘ ĐỀ & MA TRẬN BLOOM -->
+            <div class="card studio-card-equal">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">
+                    <span class="step-badge">2</span>
+                    <span>Cấu Hình Bộ Đề & Ma Trận Nhận Thức Bloom</span>
+                  </div>
+                  <div class="card-subtitle">Tùy chỉnh thông tin đề thi, số lượng câu hỏi, dạng thức và cấp độ khó</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Tên bộ đề kiểm tra</label>
+                <input type="text" id="genExamTitle" value="Đề kiểm tra: Kiến trúc Transformer & Kỹ thuật Tinh chỉnh QLoRA" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Môn học / Học phần</label>
+                  <input type="text" id="genSubject" value="Trí tuệ nhân tạo & Học sâu" />
+                </div>
+                <div class="form-group">
+                  <label>Mã đề & Thời lượng (Phút)</label>
+                  <div class="form-row">
+                    <input type="text" id="genExamCode" value="AI-2026" />
+                    <input type="number" id="genDuration" value="15" min="5" max="180" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Tổng số lượng câu hỏi cần sinh (Từ 1 đến 50 câu)</label>
+                <div class="question-count-picker">
+                  <input type="range" id="rangeQuestionCount" min="1" max="30" value="5" oninput="syncQuestionCount(this.value)" />
+                  <input type="number" id="numQuestionCount" class="question-count-number" min="1" max="50" value="5" oninput="syncQuestionCount(this.value)" />
+                  <span class="count-unit-label">câu hỏi</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Dạng câu hỏi muốn AI sinh ra (4 dạng chuẩn khảo thí)</label>
+                <select id="genQuestionTypeFilter" onchange="onQuestionTypeModeChange(this.value)">
+                  <option value="mixed">Kết hợp cả 4 dạng (Trắc nghiệm + Điền khuyết + Ghép cặp + Tự luận)</option>
+                  <option value="multiple_choice">Chỉ sinh Trắc nghiệm 4 lựa chọn (A, B, C, D)</option>
+                  <option value="fill_blank">Chỉ sinh Điền khuyết (Cloze Test — Điền từ khóa vào chỗ trống)</option>
+                  <option value="matching">Chỉ sinh Ghép cặp (Matching — Nối Cột A với Cột B)</option>
+                  <option value="essay">Chỉ sinh Tự luận (Kèm Barem từ khóa & AI chấm điểm ngữ nghĩa)</option>
+                  <option value="custom">Tùy chọn tích chọn các dạng câu hỏi muốn kết hợp...</option>
+                </select>
+                <div id="customTypeCheckboxes" class="type-checkbox-grid" style="display:none; margin-top:10px;">
+                  <label class="type-check-pill">
+                    <input type="checkbox" class="qtype-cb" value="multiple_choice" checked />
+                    <span>🎯 Trắc nghiệm (A, B, C, D)</span>
+                  </label>
+                  <label class="type-check-pill">
+                    <input type="checkbox" class="qtype-cb" value="fill_blank" checked />
+                    <span>✏️ Điền khuyết (Cloze)</span>
+                  </label>
+                  <label class="type-check-pill">
+                    <input type="checkbox" class="qtype-cb" value="matching" checked />
+                    <span>🔗 Ghép cặp (Cột A - B)</span>
+                  </label>
+                  <label class="type-check-pill">
+                    <input type="checkbox" class="qtype-cb" value="essay" checked />
+                    <span>📝 Tự luận (AI chấm điểm)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Phân bố mức độ nhận thức (Theo thang đo Bloom)</label>
+                <select id="genDifficultyFilter" onchange="onDifficultyFilterChange(this.value)">
+                  <option value="Tất cả mức độ (Cân bằng theo chuẩn Bloom)">Tự động cân bằng 4 cấp độ nhận thức Bloom</option>
+                  <option value="custom_bloom">Tùy chỉnh Ma trận Đề thi theo số câu từng cấp độ Bloom...</option>
+                  <option value="Nhận biết">Chỉ sinh câu hỏi cấp độ: Nhận biết</option>
+                  <option value="Thông hiểu">Chỉ sinh câu hỏi cấp độ: Thông hiểu</option>
+                  <option value="Vận dụng">Chỉ sinh câu hỏi cấp độ: Vận dụng</option>
+                  <option value="Vận dụng cao">Chỉ sinh câu hỏi cấp độ: Vận dụng cao</option>
+                </select>
+
+                <!-- Ma trận Bloom tùy chỉnh (Exam Blueprint Matrix) -->
+                <div id="customBloomMatrix" class="bloom-matrix-box" style="display:none;">
+                  <div class="bloom-matrix-header">
+                    <span>Ma trận Đề thi (Exam Blueprint)</span>
+                    <div class="bloom-preset-btns">
+                      <button type="button" class="btn-chip" onclick="applyBloomPreset(2,2,1,0)">Cơ bản (5 câu)</button>
+                      <button type="button" class="btn-chip" onclick="applyBloomPreset(4,3,2,1)">Chuẩn 4-3-2-1 (10 câu)</button>
+                      <button type="button" class="btn-chip" onclick="applyBloomPreset(3,4,5,3)">Phân hóa (15 câu)</button>
+                    </div>
+                  </div>
+                  <div class="bloom-matrix-grid">
+                    <div class="bloom-cell nb">
+                      <label>Nhận biết</label>
+                      <input type="number" id="bloomCountNB" min="0" max="50" value="2" oninput="syncCustomBloomCounts()" />
+                    </div>
+                    <div class="bloom-cell th">
+                      <label>Thông hiểu</label>
+                      <input type="number" id="bloomCountTH" min="0" max="50" value="2" oninput="syncCustomBloomCounts()" />
+                    </div>
+                    <div class="bloom-cell vd">
+                      <label>Vận dụng</label>
+                      <input type="number" id="bloomCountVD" min="0" max="50" value="1" oninput="syncCustomBloomCounts()" />
+                    </div>
+                    <div class="bloom-cell vdc">
+                      <label>Vận dụng cao</label>
+                      <input type="number" id="bloomCountVDC" min="0" max="50" value="0" oninput="syncCustomBloomCounts()" />
+                    </div>
+                  </div>
+                  <div class="bloom-matrix-foot" id="bloomMatrixSummary">
+                    Tổng cộng: <strong>5 câu hỏi</strong> (Nhận biết: 40% • Thông hiểu: 40% • Vận dụng: 20% • Vận dụng cao: 0%)
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top:auto; padding-top:8px;">
+                <button class="btn btn-ai-grad btn-lg btn-3d-effect" id="btnRunGenerate" onclick="generateExamNow()">
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>✨ Sinh Bộ Đề Bằng AI & Xem Trước Ngay</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- MÀN HÌNH BƯỚC 2: BẢN XEM TRƯỚC, CHỈNH SỬA & XUẤT BỘ ĐỀ -->
+          <div id="studioViewPreview" class="studio-preview-layout" style="display:none;">
+
+            <!-- Cột trái (Sticky Control Panel): Thông tin đề & Công cụ xuất file -->
+            <aside class="preview-sidebar-card card">
+              <div class="preview-sidebar-badge">🎮 BỘ ĐỀ ĐANG MỞ</div>
+              <h3 class="preview-exam-title" id="activeExamHeaderTitle">Bộ Đề Đã Sinh</h3>
+              <div class="preview-exam-meta" id="activeExamHeaderMeta">
+                Mã đề: AI-2026 • Thời lượng: 15 phút
+              </div>
+
+              <div class="preview-action-group" id="exportToolbar">
+                <div class="preview-group-label">XUẤT BẢN BỘ ĐỀ THI</div>
+                <button class="btn btn-emerald btn-block btn-3d-effect" onclick="exportCurrentExam('docx_full')">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>Tải Word Giáo Viên (.docx có đáp án)</span>
+                </button>
+                <button class="btn btn-primary btn-block btn-3d-effect" onclick="exportCurrentExam('docx_student')">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span>Tải Word Học Sinh (.docx ẩn đáp án)</span>
+                </button>
+                <div class="preview-row-2">
+                  <button class="btn btn-outline btn-block" onclick="exportCurrentExam('md')">Markdown (.md)</button>
+                  <button class="btn btn-outline btn-block" onclick="exportCurrentExam('json')">JSON (.json)</button>
+                </div>
+
+                <div class="preview-group-label" style="margin-top:14px;">ĐẤU TRƯỜNG & THAO TÁC</div>
+                <button class="btn btn-amber-grad btn-block btn-3d-effect" onclick="startQuizFromCurrentExam()">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>Vào Đấu Trường Thi Thử Ngay</span>
+                </button>
+                <button class="btn btn-outline btn-block" id="btnShuffleExam" onclick="shuffleCurrentExam()">
+                  <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                  <span>🔀 Trộn Đề / Tạo Mã Đề Mới</span>
+                </button>
+                <button class="btn btn-outline btn-block" onclick="switchStudioStep('config')">
+                  <span>← Quay Lại Chỉnh Cấu Hình / Sinh Đề Mới</span>
+                </button>
+              </div>
+            </aside>
+
+            <!-- Cột phải (Wide Exam Sheet): Danh sách câu hỏi rộng rãi, dễ đọc -->
+            <div class="preview-questions-canvas">
+              <div class="card" style="margin-bottom:0;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-title">Nội Dung Chi Tiết Các Câu Hỏi Trong Đề</div>
+                    <div class="card-subtitle">Nhấn "Sửa câu hỏi", "Xóa" hoặc "+ Thêm câu hỏi" để biên tập trực tiếp bộ đề</div>
+                  </div>
+                  <button class="btn btn-primary btn-xs btn-3d-effect" onclick="openAddQuestionModal()">
+                    + Thêm Câu Hỏi Thủ Công
+                  </button>
+                </div>
+                <div id="generatedQuestionsList">
+                  <div style="text-align:center; padding:48px 20px; color:var(--text-muted);">
+                    Đang tải bộ đề từ tài khoản của bạn...
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ===============================================================
+             TAB 2: KHO BỘ ĐỀ ĐÃ LƯU CỦA TÔI (THEO TÀI KHOẢN)
+        ================================================================ -->
+        <section id="tab-myexams" class="tab-pane">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Thư Viện Bộ Đề Cá Nhân</div>
+                <div class="card-subtitle">
+                  Mỗi tài khoản có kho lưu trữ bộ đề độc lập. Bạn có thể mở lại, chỉnh sửa, thi thử hoặc xuất file Word bất cứ lúc nào.
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                <input type="text" id="searchMyExamsInput" placeholder="Tìm theo tên đề, mã đề hoặc môn học..." oninput="filterMyExamsTable()" style="width:280px;" />
+                <button class="btn btn-primary btn-3d-effect" onclick="openTab('generate', document.querySelectorAll('.nav-item')[0]); switchStudioStep('config');">
+                  + Tạo Bộ Đề Mới
+                </button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width:100px;">Mã Đề</th>
+                    <th>Tên Bộ Đề & Môn Học</th>
+                    <th>Quy Mô & Phân Bố Dạng Câu</th>
+                    <th>Phân Bố Mức Độ Bloom</th>
+                    <th style="width:140px;">Ngày Tạo</th>
+                    <th style="width:290px;">Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody id="myExamsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TAB 3: ĐẤU TRƯỜNG LÀM ĐỀ THI THỬ & CHẤM ĐIỂM TỰ ĐỘNG
+        ================================================================ -->
+        <section id="tab-quiz" class="tab-pane">
+          <div class="quiz-layout">
+            <div class="quiz-main-col">
+              <div class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-title" id="quizTitleDisplay">Đấu Trường Thi Thử Trực Tuyến</div>
+                    <div class="card-subtitle" id="quizMetaDisplay">
+                      Chọn một bộ đề ở góc phải để bắt đầu làm bài kiểm tra.
+                    </div>
+                  </div>
+                  <select id="quizExamSelect" onchange="loadExamForQuiz(this.value)" style="width:290px;"></select>
+                </div>
+
+                <div id="quizScoreBanner" style="display:none; margin-bottom:20px;"></div>
+                <div id="quizQuestionsContainer"></div>
+              </div>
+            </div>
+
+            <aside class="quiz-side-col">
+              <div class="card quiz-hud-sidebar" style="position:sticky; top:84px;">
+                <div class="preview-sidebar-badge">⏱️ ĐỒNG HỒ ĐẤU TRƯỜNG</div>
+                <div id="quizTimerBox" class="quiz-timer-display">15:00</div>
+                <div class="quiz-progress-meta" id="quizAnsweredCounter">
+                  Đã trả lời: 0 / 0 câu hỏi
+                </div>
+                <div class="preview-group-label">BẢNG ĐIỀU HƯỚNG CÂU HỎI</div>
+                <div id="quizPaletteGrid" class="quiz-palette-grid"></div>
+                <button class="btn btn-emerald btn-lg btn-3d-effect" id="btnSubmitQuiz" onclick="submitQuizNow(false)">
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>Nộp Bài & Chấm Điểm AI</span>
+                </button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TAB 4: LỊCH SỬ HOẠT ĐỘNG & KHO TÀI LIỆU ĐÃ ĐỌC
+        ================================================================ -->
+        <section id="tab-history" class="tab-pane">
+          <div class="grid-4">
+            <div class="kpi-box kpi-indigo">
+              <div class="kpi-title">BỘ ĐỀ ĐÃ LƯU</div>
+              <div class="kpi-num" id="statExamsCount">0</div>
+              <div class="kpi-desc">Lưu trữ riêng theo tài khoản</div>
+            </div>
+            <div class="kpi-box kpi-purple">
+              <div class="kpi-title">TỔNG CÂU HỎI ĐÃ SINH</div>
+              <div class="kpi-num" id="statQuestionsCount">0</div>
+              <div class="kpi-desc">Đầy đủ đáp án & giải thích</div>
+            </div>
+            <div class="kpi-box kpi-amber">
+              <div class="kpi-title">TÀI LIỆU ĐÃ ĐỌC</div>
+              <div class="kpi-num" id="statDocsCount">0</div>
+              <div class="kpi-desc">Tái sử dụng sinh đề tức thì</div>
+            </div>
+            <div class="kpi-box kpi-emerald">
+              <div class="kpi-title">LƯỢT LÀM ĐỀ THI THỬ</div>
+              <div class="kpi-num" id="statAttemptsCount">0</div>
+              <div class="kpi-desc">Chấm tự động 4 dạng câu hỏi</div>
+            </div>
+          </div>
+
+          <div class="studio-config-grid">
+            <!-- Kho tài liệu đã đọc -->
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Kho Tài Liệu Đã Đọc Của Bạn</div>
+                  <div class="card-subtitle">Nhấn "Dùng sinh đề" để nạp lại văn bản tài liệu mà không cần tải lại file</div>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Tên Tài Liệu</th>
+                      <th>Định Dạng</th>
+                      <th>Quy Mô</th>
+                      <th>Thời Gian</th>
+                      <th>Thao Tác</th>
+                    </tr>
+                  </thead>
+                  <tbody id="historyDocsBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Nhật ký hoạt động & lịch sử thi -->
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-title">Lịch Sử Điểm Làm Bài Thi Thử</div>
+                    <div class="card-subtitle">Kết quả các lượt thi thử gần nhất trong tài khoản</div>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Bộ Đề</th>
+                        <th>Điểm Số</th>
+                        <th>Số Câu Đạt</th>
+                        <th>Thời Gian</th>
+                        <th>Thao Tác</th>
+                      </tr>
+                    </thead>
+                    <tbody id="historyAttemptsBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">Nhật Ký Hoạt Động Tài Khoản</div>
+                </div>
+                <div id="activityTimelineBox" style="max-height:260px; overflow-y:auto;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             TAB 5: QUY TRÌNH HUẤN LUYỆN AI & KHO DỮ LIỆU 3.600 MẪU CHATML
+        ================================================================ -->
+        <section id="tab-training" class="tab-pane">
+
+          <!-- 4 Bento KPI Cards tóm tắt Pipeline Huấn luyện -->
+          <div class="grid-4">
+            <div class="kpi-box kpi-indigo">
+              <div class="kpi-title">MÔ HÌNH NỀN TẢNG (BASE LLM)</div>
+              <div class="kpi-num" style="font-size:20px; margin:8px 0 4px;">Qwen2.5-7B-Instruct</div>
+              <div class="kpi-desc">Kiến trúc Transformer Decoder-only</div>
+            </div>
+            <div class="kpi-box kpi-purple">
+              <div class="kpi-title">KỸ THUẬT TINH CHỈNH</div>
+              <div class="kpi-num" style="font-size:20px; margin:8px 0 4px;">QLoRA 4-bit (NF4)</div>
+              <div class="kpi-desc">Rank r = 16 • Alpha = 32 • q,k,v,o_proj</div>
+            </div>
+            <div class="kpi-box kpi-amber">
+              <div class="kpi-title">TẬP DỮ LIỆU HUẤN LUYỆN</div>
+              <div class="kpi-num"><span id="trainSampleTotal">3600</span> mẫu</div>
+              <div class="kpi-desc">6 bộ Hugging Face + Giáo trình 8 ngành</div>
+            </div>
+            <div class="kpi-box kpi-emerald" style="display:flex; flex-direction:column; justify-content:space-between;">
+              <div class="kpi-title">TRẠNG THÁI ADAPTER CHECKPOINT</div>
+              <div style="font-size:12px; color:var(--text-body); margin:6px 0;"><code>adapter_weights.npz</code> đã lưu</div>
+              <button class="btn btn-ai-grad btn-xs btn-3d-effect" id="btnTriggerTraining" onclick="triggerModelTraining()" style="width:100%;">
+                <svg class="svg-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span>Chạy Huấn Luyện Lại QLoRA</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Thanh chuyển đổi 2 chế độ xem trong Tab Huấn luyện -->
+          <div class="subtab-bar">
+            <button class="subtab-btn active" id="subtabBtnOverview" onclick="switchTrainingSubtab('overview')">
+              1. Đồ Thị Hội Tụ Loss & Phân Bố Tập Dữ Liệu
+            </button>
+            <button class="subtab-btn" id="subtabBtnExplorer" onclick="switchTrainingSubtab('explorer')">
+              2. Trình Duyệt 3.600 Mẫu Dữ Liệu & Kiểm Định ChatML
+            </button>
+          </div>
+
+          <!-- SUB-VIEW 5A: ĐỒ THỊ HỘI TỤ LOSS & THỐNG KÊ PHÂN BỐ -->
+          <div id="trainingViewOverview" class="studio-config-grid">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Đồ Thị & Nhật Ký Hội Tụ Hàm Mất Mát (Training & Validation Loss)</div>
+                  <div class="card-subtitle">Quá trình tối ưu hóa Cross-Entropy Loss qua các bước huấn luyện QLoRA</div>
+                </div>
+              </div>
+              <div id="lossChartBox" class="loss-chart-container"></div>
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Step</th>
+                      <th>Epoch</th>
+                      <th>Training Loss</th>
+                      <th>Validation Loss</th>
+                      <th>Learning Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody id="trainingLogsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Cấu Trúc Phân Bố Tập Dữ Liệu (3.600 Mẫu)</div>
+                  <div class="card-subtitle">Thống kê tỷ lệ theo nguồn dữ liệu Hugging Face, dạng câu hỏi và thang đo Bloom</div>
+                </div>
+              </div>
+
+              <div class="dist-section">
+                <div class="dist-section-title">1. Nguồn dữ liệu tích hợp (Hugging Face & Giáo trình)</div>
+                <div id="trainSourceStats">Đang tải...</div>
+              </div>
+
+              <div class="dist-section">
+                <div class="dist-section-title">2. Phân bố 4 dạng thức câu hỏi khảo thí</div>
+                <div id="trainTypeStats">Đang tải...</div>
+              </div>
+
+              <div class="dist-section">
+                <div class="dist-section-title">3. Phân bố 4 cấp độ nhận thức Bloom</div>
+                <div id="trainDiffStats">Đang tải...</div>
+              </div>
+
+              <div class="dist-section" style="margin-bottom:0;">
+                <div class="dist-section-title">4. Phân bố theo lĩnh vực / môn học</div>
+                <div id="trainSubjectStats" class="badge-cloud">Đang tải...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB-VIEW 5B: TRÌNH DUYỆT 3.600 MẪU & CHATML INSPECTOR ĐỐI CHIẾU TRỰC TIẾP -->
+          <div id="trainingViewExplorer" style="display:none;">
+            <div class="card" style="margin-bottom:16px;">
+              <div class="explorer-filters-grid" style="margin-bottom:0; padding:0; background:transparent; border:none;">
+                <div>
+                  <label>Nguồn dữ liệu (Dataset)</label>
+                  <select id="explorerSource" onchange="loadDatasetExplorer(1)">
+                    <option value="">Tất cả nguồn dữ liệu (3.600 mẫu)</option>
+                    <option value="tridm/VMLU">HuggingFace: tridm/VMLU (Trắc nghiệm Đa ngành)</option>
+                    <option value="taidng/UIT-ViQuAD2.0">HuggingFace: taidng/UIT-ViQuAD 2.0 (Đọc hiểu Tự luận)</option>
+                    <option value="allenai/sciq">HuggingFace: allenai/sciq (Khoa học Tự nhiên)</option>
+                    <option value="ehovy/race">HuggingFace: ehovy/race (Đọc hiểu & Ghép cặp)</option>
+                    <option value="AndyChiang/cloth">HuggingFace: AndyChiang/cloth (Điền khuyết Cloze Test)</option>
+                    <option value="bkai-foundation-models/vi-alpaca">HuggingFace: bkai/vi-alpaca (Instruction Tuning)</option>
+                    <option value="Giáo trình">Giáo trình Đại học 8 chuyên ngành</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Dạng thức câu hỏi</label>
+                  <select id="explorerType" onchange="loadDatasetExplorer(1)">
+                    <option value="">Tất cả 4 dạng câu hỏi</option>
+                    <option value="multiple_choice">Trắc nghiệm 4 lựa chọn</option>
+                    <option value="fill_blank">Điền khuyết (Cloze)</option>
+                    <option value="matching">Ghép cặp Cột A - B</option>
+                    <option value="essay">Tự luận kèm Barem</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Cấp độ nhận thức Bloom</label>
+                  <select id="explorerDiff" onchange="loadDatasetExplorer(1)">
+                    <option value="">Tất cả 4 cấp độ Bloom</option>
+                    <option value="Nhận biết">Nhận biết</option>
+                    <option value="Thông hiểu">Thông hiểu</option>
+                    <option value="Vận dụng">Vận dụng</option>
+                    <option value="Vận dụng cao">Vận dụng cao</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Tìm kiếm từ khóa hoặc mã mẫu</label>
+                  <input type="text" id="explorerSearch" placeholder="VD: TRAIN_1500, Transformer, lịch sử..." oninput="debounceExplorerSearch()" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Master-Detail Split: Bảng mẫu bên trái + ChatML Inspector bên phải -->
+            <div class="explorer-split-layout">
+              <div class="card" style="margin-bottom:0;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-title">Danh Sách Mẫu Huấn Luyện</div>
+                    <div class="card-subtitle">Nhấn vào bất kỳ dòng nào để xem cấu trúc Prompt ChatML ở cột bên phải</div>
+                  </div>
+                  <div class="explorer-pagination-bar">
+                    <span id="explorerPaginationInfo" style="font-size:12px; font-weight:700; color:var(--text-muted);">Đang tải...</span>
+                    <button class="btn btn-outline btn-xs" id="btnExplorerPrev" onclick="changeExplorerPage(-1)">← Trước</button>
+                    <button class="btn btn-outline btn-xs" id="btnExplorerNext" onclick="changeExplorerPage(1)">Sau →</button>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th style="width:95px;">Mã Mẫu</th>
+                        <th style="width:145px;">Nguồn & Môn</th>
+                        <th style="width:125px;">Phân Loại</th>
+                        <th>Nội Dung Câu Hỏi</th>
+                      </tr>
+                    </thead>
+                    <tbody id="explorerTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card" style="margin-bottom:0; position:sticky; top:84px;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-title">Trình Kiểm Định Cấu Trúc ChatML</div>
+                    <div class="card-subtitle" id="chatmlSampleMeta">Định dạng đầu vào/đầu ra thực tế dùng cho SFT QLoRA</div>
+                  </div>
+                </div>
+                <pre id="chatmlPreviewBox" class="chatml-code-box"></pre>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL CHỈNH SỬA / THÊM MỚI CÂU HỎI ĐỘNG THEO TỪNG DẠNG THỨC
+  ======================================================================== -->
+  <div id="editQuestionModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="card-header">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="card-title" id="modalHeaderTitle">Chỉnh Sửa Nội Dung Câu Hỏi & Đáp Án</div>
+          <span id="modalTypeBadge" class="badge badge-type-mc">Trắc nghiệm</span>
+        </div>
+        <button class="btn btn-outline btn-xs" onclick="closeEditQuestionModal()">✕</button>
+      </div>
+      <input type="hidden" id="modalQuestionId" />
+      <div class="form-group" id="modalQuestionTypeWrap" style="display:none;">
+        <label>Chọn dạng thức câu hỏi muốn thêm</label>
+        <select id="modalQuestionTypeSelect" onchange="applyModalTypeLayout(this.value, true)">
+          <option value="multiple_choice">🎯 Trắc nghiệm 4 lựa chọn (A, B, C, D)</option>
+          <option value="fill_blank">✏️ Điền khuyết (Cloze Test)</option>
+          <option value="matching">🔗 Ghép cặp (Cột A ⟷ Cột B)</option>
+          <option value="essay">📝 Tự luận (Kèm Barem & Đáp án mẫu)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Mức độ nhận thức (Thang Bloom)</label>
+          <select id="modalDifficulty">
+            <option value="Nhận biết">Nhận biết</option>
+            <option value="Thông hiểu">Thông hiểu</option>
+            <option value="Vận dụng">Vận dụng</option>
+            <option value="Vận dụng cao">Vận dụng cao</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label id="modalCorrectAnswerLabel">Đáp án đúng (A, B, C hoặc D)</label>
+          <input type="text" id="modalCorrectAnswer" placeholder="Nhập đáp án đúng..." />
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="modalQuestionTextLabel">Nội dung câu hỏi (Question Stem)</label>
+        <textarea id="modalQuestionText" rows="3"></textarea>
+      </div>
+      <div class="form-row" id="modalRowAB">
+        <div class="form-group">
+          <label id="modalOptALabel">Phương án A</label>
+          <input type="text" id="modalOptA" />
+        </div>
+        <div class="form-group">
+          <label id="modalOptBLabel">Phương án B</label>
+          <input type="text" id="modalOptB" />
+        </div>
+      </div>
+      <div class="form-row" id="modalRowCD">
+        <div class="form-group">
+          <label id="modalOptCLabel">Phương án C</label>
+          <input type="text" id="modalOptC" />
+        </div>
+        <div class="form-group">
+          <label id="modalOptDLabel">Phương án D</label>
+          <input type="text" id="modalOptD" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Lời giải thích chi tiết & Căn cứ tài liệu</label>
+        <textarea id="modalExplanation" rows="2"></textarea>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:12px;">
+        <button class="btn btn-outline" onclick="closeEditQuestionModal()">Hủy bỏ</button>
+        <button class="btn btn-primary btn-3d-effect" id="modalSubmitBtn" onclick="saveQuestionChanges()">Lưu Thay Đổi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL XEM CHI TIẾT LỊCH SỬ BÀI LÀM THI THỬ
+  ======================================================================== -->
+  <div id="attemptDetailModal" class="modal-overlay">
+    <div class="modal-box" style="max-width:780px; max-height:86vh; overflow-y:auto;">
+      <div class="card-header">
+        <div>
+          <div class="card-title" id="attemptModalTitle">Chi Tiết Lượt Làm Bài Thi Thử</div>
+          <div class="card-subtitle" id="attemptModalMeta">Kết quả chấm điểm tự động từng câu</div>
+        </div>
+        <button class="btn btn-outline btn-xs" onclick="closeAttemptDetailModal()">✕</button>
+      </div>
+      <div id="attemptModalBody"></div>
+      <div style="display:flex; justify-content:flex-end; margin-top:14px;">
+        <button class="btn btn-primary" onclick="closeAttemptDetailModal()">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastNotification" class="toast-box"></div>
+
+  <!-- Hỗ trợ đọc file PDF đa phông chữ trực tiếp trên trình duyệt kết hợp cùng bộ giải mã PDF phía Backend -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

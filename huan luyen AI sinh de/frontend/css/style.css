@@ -1,0 +1,2153 @@
+/* =========================================================================
+   GAMING EDU × AI EXAMGEN — DUAL-TONE GAMIFIED SAAS DESIGN SYSTEM
+   Bảng màu & Hệ thống Token đồng bộ trực tiếp từ dự án Gaming Edu:
+   - Brand Indigo / Violet: #4C49E8, #6366F1, #7C3AED
+   - AI Multi-Gradient: linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%)
+   - Dark Cosmic Navy (Auth Showcase & Sidebar): #121633 -> #0F172A -> #1E1B4B
+   - 4 Tactile Game Colors: Red (#EF4444), Blue (#3B82F6), Amber (#F59E0B), Emerald (#10B981)
+   - Hỗ trợ đầy đủ Chế độ Sáng (Workspace #F4F6FB) & Chế độ Tối (html.dark #0B0F19)
+========================================================================= */
+
+:root {
+  --bg-body: #F4F6FB;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --bg-sidebar: #121633;
+  --primary: #4C49E8;
+  --primary-indigo: #6366F1;
+  --primary-hover: #3E3BD4;
+  --primary-light: #EEF2FF;
+  --violet: #7C3AED;
+  --violet-light: #F5F3FF;
+  --emerald: #10B981;
+  --emerald-dark: #059669;
+  --emerald-light: #ECFDF5;
+  --amber: #F59E0B;
+  --amber-dark: #D97706;
+  --amber-light: #FFFBEB;
+  --rose: #EF4444;
+  --rose-dark: #DC2626;
+  --rose-light: #FEF2F2;
+  --purple: #7C3AED;
+  --purple-light: #F5F3FF;
+  --game-a: #EF4444;
+  --game-b: #3B82F6;
+  --game-c: #F59E0B;
+  --game-d: #10B981;
+  --ai-gradient: linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%);
+  --violet-gradient: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+  --amber-gradient: linear-gradient(135deg, #FBBF24 0%, #F59E0B 55%, #EA580C 100%);
+  --text-dark: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --border: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --radius: 18px;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 14px rgba(76, 73, 232, 0.04);
+  --shadow-hover: 0 12px 28px -6px rgba(99, 102, 241, 0.12), 0 8px 12px -6px rgba(99, 102, 241, 0.06);
+  --shadow-md: 0 20px 45px -10px rgba(18, 22, 51, 0.18);
+  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Be Vietnam Pro", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6,
+.card-title, .topbar-title, .brand-name, .wf-title, .kpi-num {
+  font-family: var(--font-heading);
+}
+
+body {
+  background-color: var(--bg-body);
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(99, 102, 241, 0.06) 0%, transparent 38%),
+    radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.06) 0%, transparent 38%);
+  color: var(--text-dark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Modern Slim Scrollbar (Gaming Edu) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.65);
+}
+
+.svg-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.svg-icon-sm {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.text-amber {
+  color: #FBBF24;
+}
+
+/* =========================================================================
+   1. MÀN HÌNH ĐĂNG NHẬP / ĐĂNG KÝ (CHUẨN GAMING EDU AUTH SHOWCASE)
+========================================================================= */
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #F4F6FB;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
+}
+
+.auth-container {
+  width: 1120px;
+  max-width: 100%;
+  background: #FFFFFF;
+  border-radius: 32px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  box-shadow: 0 25px 60px -12px rgba(18, 22, 51, 0.22);
+  min-height: 660px;
+}
+
+/* Cột trái Dark Cosmic Navy (#121633) */
+.auth-promo {
+  background-color: #121633;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(124, 58, 237, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(79, 70, 229, 0.28) 0%, transparent 50%),
+    linear-gradient(155deg, #121633 0%, #191D42 55%, #231642 100%);
+  color: #FFFFFF;
+  padding: 36px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-nebula-top {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(147, 51, 234, 0.22);
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.auth-nebula-bottom {
+  position: absolute;
+  bottom: -90px;
+  right: -90px;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background: rgba(79, 70, 229, 0.24);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.auth-promo-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.auth-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #F59E0B;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+}
+
+.auth-brand-text {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  color: #FFFFFF;
+}
+
+.auth-quest-pill {
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 12px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-quest-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.auth-quest-sub {
+  display: block;
+  font-size: 10px;
+  color: #94A3B8;
+  line-height: 1.2;
+}
+
+.auth-quest-title {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+
+.auth-promo-center {
+  position: relative;
+  z-index: 2;
+  my: auto;
+}
+
+.auth-artwork-card {
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: 24px 24px;
+  box-shadow: 0 20px 40px rgba(8, 11, 28, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-artwork-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.auth-artwork-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  color: #C7D2FE;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.auth-artwork-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #FBBF24;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 3px 9px;
+  border-radius: 8px;
+}
+
+.auth-artwork-card h2 {
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+}
+
+.auth-artwork-card p {
+  font-size: 13px;
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.auth-artwork-card p code {
+  color: #FDE68A;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.45;
+}
+
+.feature-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: rgba(16, 185, 129, 0.22);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  color: #34D399;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 3 Huy Hiệu Thông Số Đáy Cột Trái */
+.auth-stats-row {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-top: 16px;
+  margin-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.auth-stat-badge {
+  padding: 10px 11px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-stat-emoji {
+  font-size: 17px;
+}
+
+.auth-stat-info span {
+  display: block;
+  font-size: 10px;
+  color: #94A3B8;
+  line-height: 1.25;
+}
+
+.auth-stat-info strong {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-top: 1px;
+}
+
+/* Cột phải Form Auth Trắng Tinh Tế */
+.auth-form-box {
+  padding: 44px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #FFFFFF;
+}
+
+.auth-top-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.game-edu-pill {
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: #4C49E8;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.game-edu-sub {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #4C49E8;
+}
+
+.auth-main-heading {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 900;
+  color: #0F172A;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.auth-main-desc {
+  font-size: 13.5px;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* Segmented Capsule Tabs chuẩn Gaming Edu */
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #F1F5F9;
+  padding: 4px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+
+.auth-tab-btn {
+  padding: 9px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auth-tab-btn.active {
+  background: #FFFFFF;
+  color: #4C49E8;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.auth-divider {
+  text-align: center;
+  margin: 18px 0 14px;
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+/* =========================================================================
+   2. BỐ CỤC CHÍNH SAU KHI ĐĂNG NHẬP (DARK COSMIC SIDEBAR + WORKSPACE)
+========================================================================= */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 266px;
+  background-color: #121633;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.24) 0%, transparent 45%),
+    radial-gradient(circle at 90% 90%, rgba(79, 70, 229, 0.22) 0%, transparent 50%),
+    linear-gradient(180deg, #121633 0%, #0F172A 100%);
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 4px 0 24px rgba(15, 23, 42, 0.15);
+}
+
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  margin-bottom: 18px;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #7C3AED 0%, #4C49E8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  color: #FFFFFF;
+}
+
+.brand-accent {
+  color: #FBBF24;
+}
+
+.brand-tag {
+  font-size: 11px;
+  color: #A5B4FC;
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+.sidebar-section-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  color: #64748B;
+  padding: 0 10px 8px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #94A3B8;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-icon-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #F8FAFC;
+  transform: translateX(2px);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #6366F1 0%, #7C3AED 100%);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.5);
+}
+
+.nav-item.active .nav-icon-box {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.sidebar-footer {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 14px 15px;
+  font-size: 11.5px;
+  color: #CBD5E1;
+}
+
+.sidebar-footer-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: #FBBF24;
+  margin-bottom: 9px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.sidebar-meta-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  color: #94A3B8;
+}
+
+.sidebar-meta-row strong {
+  color: #F8FAFC;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+/* Main Content Area & Topbar */
+.main-area {
+  margin-left: 266px;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 13px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.topbar-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.35px;
+}
+
+.topbar-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Huy hiệu AI Quota màu vàng cam chuẩn Gaming Edu */
+.ai-quota-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.28);
+  white-space: nowrap;
+}
+
+.theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-subtle);
+  color: var(--text-body);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--primary-indigo);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px 4px 12px;
+  border-radius: 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+
+.user-info-text {
+  text-align: right;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7C3AED 0%, #4C49E8 100%);
+  color: #FFFFFF;
+  border: 2px solid #DDD6FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(124, 58, 237, 0.25);
+}
+
+.user-name {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.user-role {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.page-content {
+  padding: 24px 28px 40px;
+  max-width: 1460px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* =========================================================================
+   3. WORKFLOW STEPPER BAR & BỐ CỤC TAB 1 (GAMING EDU STUDIO)
+========================================================================= */
+.workflow-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.workflow-steps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.workflow-step-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 16px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.workflow-step-btn:hover {
+  background: var(--bg-subtle);
+}
+
+.workflow-step-btn.active {
+  background: var(--violet-light);
+  border-color: #C4B5FD;
+}
+
+.wf-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #E2E8F0;
+  color: var(--text-body);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 900;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.workflow-step-btn.active .wf-num {
+  background: linear-gradient(135deg, #7C3AED 0%, #4C49E8 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.35);
+}
+
+.wf-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.workflow-step-btn.active .wf-title {
+  color: #5B21B6;
+}
+
+.wf-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.workflow-connector {
+  width: 28px;
+  height: 2px;
+  background: var(--border);
+}
+
+.studio-config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.studio-card-equal {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0 !important;
+}
+
+.studio-preview-layout {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.preview-sidebar-card {
+  position: sticky;
+  top: 84px;
+  margin-bottom: 0 !important;
+}
+
+.preview-sidebar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #6D28D9;
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.preview-exam-title {
+  font-size: 16.5px;
+  font-weight: 900;
+  line-height: 1.4;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.preview-exam-meta {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.preview-group-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.preview-action-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.preview-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+/* =========================================================================
+   4. BENTO CARDS, UPLOAD ZONE & FORMS (CHUẨN GAMING EDU BENTO)
+========================================================================= */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text-dark);
+  letter-spacing: -0.2px;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.step-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #7C3AED 0%, #4C49E8 100%);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 900;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(124, 58, 237, 0.3);
+}
+
+.upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #C4B5FD;
+  background: rgba(245, 243, 255, 0.45);
+  border-radius: 16px;
+  padding: 18px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s;
+  margin-bottom: 14px;
+}
+
+.upload-zone:hover {
+  background: #F5F3FF;
+  border-color: #7C3AED;
+  transform: translateY(-1px);
+}
+
+.upload-zone-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #EDE9FE 0%, #E0E7FF 100%);
+  color: #6D28D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.upload-zone-title {
+  font-weight: 800;
+  font-size: 13.5px;
+  color: #5B21B6;
+  margin-bottom: 3px;
+}
+
+.upload-zone-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.doc-stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: var(--emerald-light);
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+  padding: 9px 13px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-body);
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 13px;
+  font-size: 13.5px;
+  color: var(--text-dark);
+  background: #FFFFFF;
+  transition: all 0.18s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(76, 73, 232, 0.12);
+}
+
+.question-count-picker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 9px 14px;
+  border-radius: 13px;
+}
+
+.question-count-picker input[type="range"] {
+  flex: 1;
+  accent-color: #7C3AED;
+  cursor: pointer;
+}
+
+.question-count-number {
+  width: 74px !important;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 15px !important;
+  color: #4C49E8 !important;
+}
+
+.count-unit-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* =========================================================================
+   5. MA TRẬN ĐỀ THI BLOOM (EXAM BLUEPRINT MATRIX)
+========================================================================= */
+.bloom-matrix-box {
+  margin-top: 10px;
+  padding: 14px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.bloom-matrix-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.bloom-preset-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-chip {
+  padding: 4.5px 10px;
+  border-radius: 999px;
+  border: 1px solid #C4B5FD;
+  background: #F5F3FF;
+  color: #6D28D9;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-chip:hover {
+  background: #7C3AED;
+  border-color: #7C3AED;
+  color: #FFFFFF;
+}
+
+.bloom-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.bloom-cell {
+  padding: 9px;
+  border-radius: 11px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.bloom-cell label {
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.bloom-cell.nb { border-top: 3.5px solid #3B82F6; }
+.bloom-cell.th { border-top: 3.5px solid #10B981; }
+.bloom-cell.vd { border-top: 3.5px solid #F59E0B; }
+.bloom-cell.vdc { border-top: 3.5px solid #EF4444; }
+
+.bloom-matrix-foot {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--text-body);
+  background: var(--bg-card);
+  padding: 7px 11px;
+  border-radius: 9px;
+  border: 1px dashed #C4B5FD;
+}
+
+/* =========================================================================
+   6. TACTILE 3D BUTTONS & BADGES (CHUẨN GAMING EDU)
+========================================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.btn-3d-effect {
+  border-bottom: 3.5px solid rgba(0, 0, 0, 0.24);
+}
+
+.btn-3d-effect:hover {
+  transform: translateY(-1.5px);
+}
+
+.btn-3d-effect:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+.btn-xs {
+  padding: 5.5px 11px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366F1 0%, #4C49E8 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(76, 73, 232, 0.26);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4F46E5 0%, #3E3BD4 100%);
+  box-shadow: 0 6px 20px rgba(76, 73, 232, 0.36);
+}
+
+.btn-ai-grad {
+  background: var(--ai-gradient);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.32);
+}
+.btn-ai-grad:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.45);
+}
+
+.btn-amber-grad {
+  background: var(--amber-gradient);
+  color: #0F172A;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.28);
+}
+.btn-amber-grad:hover {
+  filter: brightness(1.04);
+  box-shadow: 0 8px 22px rgba(245, 158, 11, 0.38);
+}
+
+.btn-emerald {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+.btn-emerald:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.btn-amber {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF;
+}
+.btn-amber:hover {
+  background: #B45309;
+}
+
+.btn-outline {
+  background: var(--bg-card);
+  color: var(--text-body);
+  border: 1.5px solid #CBD5E1;
+}
+.btn-outline:hover {
+  background: var(--bg-subtle);
+  border-color: #7C3AED;
+  color: #5B21B6;
+}
+
+.btn-danger {
+  background: var(--rose-light);
+  color: var(--rose-dark);
+  border: 1px solid #FECACA;
+}
+.btn-danger:hover {
+  background: #FECACA;
+}
+
+.btn-lg {
+  width: 100%;
+  padding: 13px 18px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.badge-nb { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+.badge-th { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+.badge-vd { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+.badge-vdc { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+.badge-purple { background: #F5F3FF; color: #6D28D9; border: 1px solid #DDD6FE; }
+.badge-slate { background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; }
+
+.badge-type-mc { background: #EEF2FF; color: #4338CA; border: 1px solid #C7D2FE; }
+.badge-type-fb { background: #FDF2F8; color: #BE185D; border: 1px solid #FBCFE8; }
+.badge-type-mt { background: #F5F3FF; color: #6D28D9; border: 1px solid #DDD6FE; }
+.badge-type-es { background: #FFF7ED; color: #C2410C; border: 1px solid #FED7AA; }
+
+/* =========================================================================
+   7. QUESTION CARDS & ĐẤU TRƯỜNG THI THỬ (GAMING EDU 4-COLOR HUD)
+========================================================================= */
+.q-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: var(--bg-card);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.q-card:hover {
+  border-color: #C4B5FD;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.07);
+}
+
+.q-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.q-stem {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.55;
+  margin-bottom: 14px;
+  color: var(--text-dark);
+}
+
+.q-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+
+.q-opt {
+  padding: 11px 14px;
+  border-radius: 13px;
+  border: 1.5px solid var(--border);
+  border-bottom-width: 3.5px;
+  background: var(--bg-subtle);
+  font-size: 13.5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  line-height: 1.45;
+  transition: all 0.16s;
+}
+
+.q-opt:hover {
+  transform: translateY(-1px);
+  border-color: #A5B4FC;
+}
+
+/* Huy hiệu 4 màu phương án A, B, C, D chuẩn Gaming Edu (▲ Đỏ, ◆ Xanh, ● Vàng, ■ Lục) */
+.opt-key-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 42px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.opt-key-A { background: #EF4444; border-bottom: 2px solid #B91C1C; }
+.opt-key-B { background: #3B82F6; border-bottom: 2px solid #1D4ED8; }
+.opt-key-C { background: #F59E0B; border-bottom: 2px solid #B45309; }
+.opt-key-D { background: #10B981; border-bottom: 2px solid #047857; }
+
+.q-opt.is-correct {
+  background: var(--emerald-light);
+  border-color: #34D399;
+  border-bottom-color: #059669;
+  color: #065F46;
+  font-weight: 700;
+}
+
+.q-opt.is-selected {
+  background: #EEF2FF;
+  border-color: #6366F1;
+  border-bottom-color: #4338CA;
+  color: #312E81;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.16);
+}
+
+.q-exp {
+  margin-top: 13px;
+  padding: 11px 14px;
+  background: var(--bg-subtle);
+  border-left: 4px solid #7C3AED;
+  border-radius: 9px;
+  font-size: 12.5px;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+.quiz-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Sidebar Đấu Trường Thi Thử phong cách Dark Cosmic HUD */
+.quiz-hud-sidebar {
+  background: linear-gradient(160deg, #121633 0%, #1E1B4B 100%) !important;
+  border-color: rgba(129, 140, 248, 0.28) !important;
+  color: #FFFFFF !important;
+}
+
+.quiz-hud-sidebar .preview-sidebar-badge {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(251, 191, 36, 0.4);
+  color: #FBBF24;
+}
+
+.quiz-hud-sidebar .preview-group-label {
+  color: #A5B4FC;
+}
+
+.quiz-timer-display {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: var(--font-mono);
+  text-align: center;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #FBBF24;
+  border: 1.5px solid rgba(251, 191, 36, 0.35);
+  border-radius: 16px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+}
+
+.quiz-progress-meta {
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #CBD5E1;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.quiz-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.competency-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #A7F3D0;
+}
+
+.comp-card {
+  background: var(--bg-card);
+  border: 1px solid #D1FAE5;
+  border-radius: 12px;
+  padding: 13px 15px;
+}
+
+.comp-card-title {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.comp-row {
+  margin-bottom: 8px;
+}
+
+.comp-row:last-child {
+  margin-bottom: 0;
+}
+
+.comp-row-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.comp-bar-track {
+  height: 7px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.comp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366F1, #A855F7);
+  border-radius: 999px;
+}
+
+/* =========================================================================
+   8. TAB 5: SUBTABS, BIỂU ĐỒ PHÂN BỐ TRỰC QUAN & DATASET EXPLORER
+========================================================================= */
+.subtab-bar {
+  display: inline-flex;
+  background: #E2E8F0;
+  padding: 5px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  gap: 4px;
+}
+
+.subtab-btn {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.subtab-btn.active {
+  background: #FFFFFF;
+  color: #4C49E8;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.dist-section {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dist-section-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.dist-bar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+.dist-bar-item {
+  font-size: 12px;
+}
+
+.dist-bar-top {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--text-body);
+  margin-bottom: 4px;
+}
+
+.dist-bar-track {
+  height: 6.5px;
+  background: #F1F5F9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.dist-bar-fill {
+  height: 100%;
+  background: var(--primary-indigo);
+  border-radius: 999px;
+}
+
+.badge-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.loss-chart-container {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 16px;
+}
+
+.explorer-filters-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.9fr 1.2fr;
+  gap: 12px;
+}
+
+.explorer-split-layout {
+  display: grid;
+  grid-template-columns: 1.18fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.chatml-code-box {
+  background: #121633;
+  color: #E2E8F0;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 12px;
+  overflow-x: auto;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  max-height: 520px;
+  overflow-y: auto;
+  border: 1px solid #263147;
+  box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.explorer-pagination-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.sample-row-clickable {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sample-row-clickable:hover {
+  background: var(--bg-subtle);
+}
+
+.sample-row-active {
+  background: #EEF2FF !important;
+}
+
+/* =========================================================================
+   9. BENTO KPI CARDS, TABLES & MODAL
+========================================================================= */
+.kpi-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.22s;
+}
+
+.kpi-box:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.kpi-indigo { border-top: 3.5px solid #6366F1; }
+.kpi-purple { border-top: 3.5px solid #A855F7; }
+.kpi-amber { border-top: 3.5px solid #F59E0B; }
+.kpi-emerald { border-top: 3.5px solid #10B981; }
+
+.kpi-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.kpi-num {
+  font-size: 27px;
+  font-weight: 900;
+  margin: 6px 0 3px;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+.kpi-desc {
+  font-size: 12px;
+  color: #6D28D9;
+  font-weight: 700;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+th {
+  background: var(--bg-subtle);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-overlay.show { display: flex; }
+
+.modal-box {
+  background: var(--bg-card);
+  width: 680px;
+  max-width: 96vw;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  padding: 26px;
+  box-shadow: var(--shadow-md);
+}
+
+.toast-box {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #121633 0%, #1E1B4B 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  padding: 13px 22px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.35);
+  z-index: 200;
+  display: none;
+}
+
+/* =========================================================================
+   10. STYLES CHO 4 DẠNG CÂU HỎI (TRẮC NGHIỆM, ĐIỀN KHUYẾT, GHÉP CẶP, TỰ LUẬN)
+========================================================================= */
+.type-checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.type-check-pill {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 11px;
+  background: var(--bg-subtle);
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  margin-bottom: 0 !important;
+  transition: all 0.2s;
+}
+
+.type-check-pill:hover {
+  border-color: #7C3AED;
+  background: #F5F3FF;
+}
+
+.type-check-pill input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #7C3AED;
+}
+
+.matching-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.matching-col {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.matching-col-title {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #4C49E8;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #CBD5E1;
+}
+
+.matching-item {
+  font-size: 13px;
+  padding: 8px 11px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+.matching-answer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 13px;
+  background: var(--emerald-light);
+  border: 1px solid #A7F3D0;
+  border-radius: 10px;
+  font-size: 12.5px;
+  color: #065F46;
+  font-weight: 700;
+}
+
+.matching-quiz-selectors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+  padding: 12px;
+  background: #EEF2FF;
+  border: 1px solid #C7D2FE;
+  border-radius: 12px;
+}
+
+.fill-blank-box {
+  padding: 13px 15px;
+  background: #FDF2F8;
+  border: 1px solid #FBCFE8;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #9D174D;
+}
+
+.essay-rubric-box {
+  padding: 13px 15px;
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #9A3412;
+}
+
+.kw-chip {
+  display: inline-block;
+  padding: 3.5px 10px;
+  margin: 2px 4px 2px 0;
+  background: #FFFFFF;
+  border: 1px solid #FDBA74;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #C2410C;
+}
+
+/* =========================================================================
+   11. CHẾ ĐỘ TỐI (DARK COSMIC MODE — CHUẨN GAMING EDU html.dark)
+========================================================================= */
+html.dark {
+  color-scheme: dark;
+  --bg-body: #0B0F19;
+  --bg-card: #151C2C;
+  --bg-subtle: #1E293B;
+  --text-dark: #F8FAFC;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border: #263147;
+  --border-subtle: #1E293B;
+}
+
+html.dark body {
+  background-color: #0B0F19;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.14) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
+  color: #F1F5F9;
+}
+
+html.dark .topbar {
+  background: rgba(21, 28, 44, 0.92);
+  border-bottom-color: #263147;
+}
+
+html.dark .theme-toggle-btn {
+  background: #1E293B;
+  border-color: #334155;
+  color: #FBBF24;
+}
+
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark input[type="password"],
+html.dark input[type="number"],
+html.dark select,
+html.dark textarea {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border-color: #334155;
+}
+
+html.dark .upload-zone {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+html.dark .upload-zone-title {
+  color: #C4B5FD;
+}
+
+html.dark .workflow-step-btn.active {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(167, 139, 250, 0.45);
+}
+
+html.dark .workflow-step-btn.active .wf-title {
+  color: #DDD6FE;
+}
+
+html.dark .wf-num {
+  background: #263147;
+  color: #CBD5E1;
+}
+
+html.dark .subtab-bar {
+  background: #1E293B;
+}
+
+html.dark .subtab-btn.active {
+  background: #151C2C;
+  color: #A5B4FC;
+}
+
+html.dark .q-opt.is-selected {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #818CF8;
+  color: #E0E7FF;
+}
+
+html.dark .q-opt.is-correct {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: #34D399;
+  color: #A7F3D0;
+}
+
+html.dark .sample-row-active {
+  background: rgba(99, 102, 241, 0.2) !important;
+}
+
+html.dark .fill-blank-box {
+  background: rgba(190, 24, 93, 0.15);
+  border-color: rgba(244, 114, 182, 0.35);
+  color: #FBCFE8;
+}
+
+html.dark .essay-rubric-box {
+  background: rgba(194, 65, 12, 0.15);
+  border-color: rgba(251, 146, 60, 0.35);
+  color: #FED7AA;
+}
+
+html.dark .matching-quiz-selectors {
+  background: rgba(79, 70, 229, 0.15);
+  border-color: rgba(129, 140, 248, 0.35);
+}
+
+html.dark .kpi-desc {
+  color: #A5B4FC;
+}
+
+/* =========================================================================
+   12. RESPONSIVE MEDIA QUERIES
+========================================================================= */
+@media (max-width: 1220px) {
+  .studio-config-grid,
+  .studio-preview-layout,
+  .quiz-layout,
+  .explorer-split-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .preview-sidebar-card {
+    position: static;
+  }
+  .explorer-filters-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 920px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    padding: 14px 16px;
+  }
+  .nav-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sidebar-footer,
+  .sidebar-section-label {
+    display: none;
+  }
+  .app-layout {
+    flex-direction: column;
+  }
+  .main-area {
+    margin-left: 0;
+  }
+  .q-options,
+  .bloom-matrix-grid,
+  .matching-quiz-selectors,
+  .competency-grid,
+  .explorer-filters-grid,
+  .matching-grid,
+  .dist-bar-grid,
+  .form-row,
+  .auth-stats-row {
+    grid-template-columns: 1fr;
+  }
+}
